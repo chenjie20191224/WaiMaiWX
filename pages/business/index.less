@@ -1,0 +1,112 @@
+/* pages/business/index.wxss */
+
+.index_swiper{
+    swiper{
+        height: 400rpx;
+        width: 100%;
+        image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.business_wrrap{
+    
+    .title{
+        height: 70rpx;
+        background-color: #eee;
+        border-bottom: 1rpx solid #c3c3c3;
+        border-top: 1rpx solid #c3c3c3;
+        display: flex;
+        align-items: center;
+        color: rgb(150, 143, 143);
+        font-size: 26rpx;
+        padding-left: 30rpx;
+    }
+    .active{
+        height: 120rpx;
+        display: flex;
+        padding: 30rpx;
+        align-items: center;
+        font-size: 26rpx;
+        text{
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        image{
+            margin-right: 10rpx;
+            width: 60rpx;
+        }
+    }
+
+    .business_msg{
+        border-bottom: 1rpx solid #c3c3c3;
+        margin-bottom: 30rpx;
+        .item{
+            height: 85rpx;
+            display: flex;
+            align-items: center;
+            border-bottom: 1rpx solid #c3c3c3;
+            margin-left: 30rpx;
+            .title2{
+                color: rgb(150, 143, 143);
+                flex: 2;
+                font-size: 30rpx;
+            }
+            .content{
+                font-size: 29rpx;
+                flex: 8;
+                view{
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 20rpx;
+                    .right{
+                        color: rgb(150, 143, 143);
+                        margin-right: 18rpx;
+                    }
+                  
+                }
+            }
+           
+        }
+        .itemEnd{
+            height: 85rpx;
+            display: flex;
+            align-items: center;
+            margin-left: 30rpx;
+            .title2{
+                color: rgb(150, 143, 143);
+                flex: 2;
+                font-size: 30rpx;
+            }
+            .content{
+                font-size: 29rpx;
+                flex: 8;
+               text{
+               
+               }
+                view{
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 20rpx;
+                    .right{
+                        color: rgb(150, 143, 143);
+                        margin-right: 18rpx;
+                    }
+                  
+                }
+            }
+            .hidden{
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
+        }
+
+    }
+
+}

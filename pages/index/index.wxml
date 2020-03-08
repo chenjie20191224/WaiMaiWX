@@ -1,0 +1,101 @@
+<!--pages/user/index.wxml-->
+<Top business="{{business}}"></Top>
+<!-- 文字滚动 -->
+  <view class="business_active">
+    <view class="example">
+      <view class="marquee_box">
+      <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
+       <text ><text class="iconfont icon-xiaolaba">：</text>{{text}}</text>
+       <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;"><text class="iconfont icon-xiaolaba">：</text>{{text}}</text>
+       </view>
+       </view>
+      </view>
+     </view>
+
+<!-- 结算工具栏 -->
+<view class="shopping_box">
+   <view class="cart_wrap" bindtap = "handleCart">
+     <image bindtap = "" src="../../icon/cart.png" mode="widthFix"/>
+     <view class="num_wrap">
+     <image src="../../icon/num.png" mode="widthFix"/>
+     </view>
+     <view class="num">
+      <text>{{cartNum}}</text>
+     </view>
+   </view>
+   <view class="sum_wrap">
+    <text >￥{{sum}}</text>
+   </view>
+   <view class="pay_wrap {{sum<business.startDelivery?'off':''}}" bindtap = "pay">
+     <text>{{sum<business.startDelivery?business.startDelivery+"元起送":"选好了"}}</text>
+   </view>
+</view>
+<!-- 菜单 -->
+<view class="Menu">
+<!-- 左侧菜品显示区 -->
+<view class="foods">
+    <scroll-view scroll-y class="foods_container" scroll-into-view="{{flag}}">
+     <!--  类别 -->
+      <view class="foods_group"
+        wx:for="{{categorys}}"
+        wx:key="sort" 
+        id="f{{index}}"
+        >
+       <view class="categoryName">
+       {{item.category}}
+       </view>
+       <!-- 该类菜品列表 -->
+       <view class="foods_list"
+        wx:for="{{foods}}"
+        wx:for-item="item2"
+        wx:for-index="index2"
+        wx:key="foodName"
+        wx:if="{{item2.category==item.category}}"
+       >
+      <!-- 菜品封面 -->
+         <image mode="widthFix" bindtap = "handlePrevewImage" src="http://localhost:8080/{{item2.icon}}" data-url="http://localhost:8080/{{item2.icon}}"/>
+         <view class="foods_msg">
+            <view class="foods_name">
+           {{item2.foodName}}
+         </view>
+         <view class="foods_active">
+         {{item2.describ}}
+         </view>
+         <view class="foods_price_wrap">
+           <view class="foods_price">
+         ￥{{item2.price}}/份 
+         </view>
+         <view class="num_tool">
+           <view class="num_edit" bindtap = "editNum" data-index="{{index2}}" data-edit="-1">-</view>
+           <view class="foods_num">{{foodNum[index2]}}</view>
+           <view class="num_edit" bindtap = "editNum" data-index="{{index2}}" data-edit="1">+</view>
+         </view>
+         </view>
+        
+         </view>
+         
+       </view>
+      </view>
+    </scroll-view>
+  </view>
+
+
+
+<!-- 右侧类别 -->
+ <view class="categorys">
+    <scroll-view scroll-y class="categorys_container">
+     <view 
+      class="category {{index==currentIndex?'active':''}}"
+      wx:for="{{categorys}}"
+      wx:key="sort"
+      bindtap = "handleItemTap"
+      data-index="{{index}}"
+      >
+      {{item.category}}
+      </view>
+    </scroll-view>
+  </view>
+
+
+ </view>
+    

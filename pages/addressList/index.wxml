@@ -1,0 +1,19 @@
+<!--pages/addressList/index.wxml-->
+<view class="address_list_wrap">
+  <view class="title">我的地址</view>
+  <view class="address_list" 
+  wx:for="{{addressList}}"
+  wx:key="id"
+  >
+   <view class="left" bindtap = "selectAddress" data-index="{{index}}">
+     <view>{{item.userName}}（{{item.sex}}）<text>{{item.telephone}}</text></view>
+     <view>{{item.address}}[{{item.houseNumber}}]</view>
+   </view>
+   <view class="right">
+    <text class="iconfont icon-bianji" bindtap = "editAddress" data-index="{{index}}"></text>
+    <text class="iconfont icon-shanchu" bindtap = "deleteAddress" data-index="{{index}}"></text>
+   </view>
+  </view>
+
+</view>
+<view class="addAddress" bindtap = "addAddress"><text >新增地址</text></view>

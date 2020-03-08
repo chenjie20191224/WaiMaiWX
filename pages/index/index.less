@@ -1,0 +1,188 @@
+/* pages/user/index.wxss */
+page{
+    height: 100%;
+}
+ .shopping_box{
+     width: 100%;
+     height: 80rpx;
+     display: flex;
+     background-color: #eee;
+     .cart_wrap{
+         padding: 5rpx;
+         text-align: center;
+        flex: 1;
+        position: relative;
+        image{
+            width: 80%;
+        }
+        .num_wrap{
+        position: absolute;
+        top: 0;
+        left: 75rpx;
+        width: 30%;
+        }
+        .num{
+            position: absolute;
+            top: -5rpx;
+            left: 75rpx;
+            width: 35rpx;
+           
+            text-align: center;
+            text{
+                color: white;
+                font-size: 20rpx;
+            }
+        }
+     }
+     .sum_wrap{
+         display: flex;
+         align-items: center;
+         flex: 4;
+         text-align: left;
+         text{
+            text-align: right;
+             color: red;
+             font-size: 30rpx;
+         }
+     }
+     .pay_wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--themeColor);
+        flex: 1.5;
+        text{
+            color: white;
+        }
+     }
+     .off{
+         background-color: #c3c3c3;
+     }
+ }
+
+
+
+   .Menu{
+         display: flex;
+         margin-top: 5rpx;
+       .foods{
+           flex: 8;
+            .foods_container{
+               height: ~'calc(100vh - 258rpx)';
+                .foods_group{
+                    .categoryName{
+                        margin-left: 20rpx;
+                        padding-left: 10rpx;
+                        border-left: 5rpx solid var(--themeColor);
+                     }
+                     .foods_list{
+                         padding: 10rpx;
+                         display: flex;
+                        image{
+                            flex: 3;
+                            // width: 30%;
+                            // height: 150rpx;
+                        }
+                        
+                         .foods_msg{
+                             flex: 7;
+                             padding: 10rpx;
+                             display: flex;
+                             flex-direction: column;
+                             justify-content: space-around;
+                            .foods_name{
+                                font-size: 30rpx;
+                                display: -webkit-box;
+                                overflow: hidden;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 1;
+                            }
+                            .foods_active{
+                                font-size: 20rpx;
+                                color: #666;
+                                display: -webkit-box;
+                                overflow: hidden;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 1;
+                            }
+                            .foods_price_wrap{
+                                display: flex;
+                                justify-content: space-between;
+                                .foods_price{
+                                    color: var(--themeColor);
+                                    font-size: 25rpx;
+                                }
+                                .num_tool{
+                                    display: flex;
+                                    .num_edit{
+                                        width: 35rpx;
+                                        height: 35rpx;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        background-color: var(--themeColor);
+                                    }
+                                    .foods_num{
+                                        width: 40rpx;
+                                        height: 35rpx;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+
+                                }
+                            }
+                           
+                        }
+                     }
+       
+                 }
+            }  
+        }
+    .categorys{
+        flex: 2;
+        .categorys_container{
+            height: ~'calc(100vh - 258rpx)';
+            .category{
+                background-color: rgb(245, 239, 239);
+                height: 80rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30rpx;
+            }
+            .active{
+               background-color: white;
+                color: var(--themeColor);
+                font-weight: 600;
+        }
+    }
+}
+}
+
+.business_active{
+    height: 22px;
+    margin-top: 0;
+     background-color:#ccc;
+    .example {
+        display: block;
+        width: 100%;
+        .marquee_box {
+            width: 100%;
+            position: relative;
+           
+            .marquee_text {
+                white-space: nowrap;
+               
+                position: absolute;
+               
+                top: 0;
+               
+               }
+           }
+       }
+     
+       
+
+      
+}

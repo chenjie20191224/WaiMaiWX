@@ -1,0 +1,67 @@
+<!--pages/orderDetail/index.wxml-->
+<view class="orderDetail_wrap">
+  <view class="content1">
+    <view class="title">
+     <view class="left"> {{business.businessName}}<text>[{{orderList[index].orderState}}]</text></view>
+     <view class="right" bindtap = "call">联系商家</view>
+   </view>
+    <view class="address_wrap">
+      <view class="title3">配送地址</view>
+      <view class="addres">
+        <view class="row">{{orderList[index].userName}} {{orderList[index].sex}}/{{orderList[index].telephone}}</view>
+        <view class="row">{{orderList[index].address}}</view>
+      </view>
+    </view>
+    <view class="outTime">
+      <view class="title3">送餐时间</view>
+      <view class="row">{{orderList[index].deliveryTime}}</view>
+    </view>
+  </view>
+  <view class="content2">
+    <view class="title2">配送菜品</view>
+    <view class="foods"
+     wx:for="{{orderDetail}}"
+     wx:key="foodName"
+    >
+      <view class="left">
+        <image src="http://localhost:8080{{item.foodIcon}}" mode="widthFix" />
+        <text >{{item.foodName}}</text>
+      </view>
+      <view class="right">
+        <text >x{{item.num}}</text><text >￥{{item.price}}</text>
+      </view>
+    </view>
+    <view class="detail">
+      <view class="row1">共计：<text class="weight">￥{{orderList[index].totalPrice}}</text></view>
+      <view class="row2">
+        <view class="left">包装费</view>
+        <view class="right">+￥{{orderList[index].packFee}}</view>
+      </view>
+      <view class="row2">
+       <view class="left">配送费</view>
+       <view class="right">+￥{{orderList[index].deliveryFee}}</view>
+      </view>
+    </view>
+    <view class="sum">
+     实付：￥{{orderList[index].actualPay}}
+    </view>
+  </view>
+  <view class="content3">
+    <view class="itme">
+      <view class="left">订单备注：</view>
+      <view class="right"><text class="hidden">{{orderList[index].remarks}}</text></view>
+    </view>
+    <view class="itme">
+      <view class="left">餐具数量：</view>
+      <view class="right"><text >{{orderList[index].tablewareQuantity}}</text></view>
+    </view>
+    <view class="itme">
+      <view class="left">外卖单号：</view>
+      <view class="right"><text >{{orderList[index].orderId}}</text></view>
+    </view>
+    <view class="itme">
+      <view class="left">下单时间：</view>
+      <view class="right"><text >{{orderList[index].orderTime}}</text></view>
+    </view>
+  </view>
+</view>

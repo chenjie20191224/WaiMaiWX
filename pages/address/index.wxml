@@ -1,0 +1,37 @@
+<!--pages/address/index.wxml-->
+<view class="address_wrap">
+  <view class="name_wrap">
+    <view class="left"><text >贵姓</text></view>
+    <view class="right">
+      <view class="name">
+       <input type="text" value="{{userAddress.userName}}" bindinput="inputName" placeholder="您的贵姓" />
+      </view>
+      <view class="sex">
+       <radio-group bindchange="seletedSex" >
+        <view class="{{active===0?'active':''}}"><text >先生</text><radio value="先生" /></view>
+        <view class="{{active===1?'active':''}}"><text >女士</text><radio value="女士" /></view>
+       </radio-group>
+      </view>
+    </view>
+  </view>
+  <view class="wrap">
+    <text >手机号</text>
+     <view class="input"> 
+       <input type="number" value="{{userAddress.telephone}}" bindinput="inputTelephone" placeholder="配送人员联系您的电话" />
+     </view>
+  </view>
+  <view class="wrap">
+     <text >收获地址</text>
+      <view class="input" bindtap = "getAdress"> 
+      <view >{{userAddress.address}}</view><view ><text>></text></view>
+     </view>
+  </view>
+  <view class="wrap">
+     <text >门牌号</text>
+     <view class="input"> 
+       <input value="{{userAddress.houseNumber}}" type="text" bindinput="inputHuoseNumber" placeholder="请输入门牌号等详细信息" />
+     </view>
+  </view>
+</view>
+
+<view class="perserve" bindtap = "perserveAddress">保存</view>

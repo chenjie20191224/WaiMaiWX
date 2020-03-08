@@ -1,0 +1,2 @@
+<!--pages/login/index.wxml-->
+<button type="warn" plain="{{true}}" open-type="getUserInfo" bindgetuserinfo="bindGetuserinfo">登录</button>

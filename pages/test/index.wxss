@@ -1,0 +1,58 @@
+.cart {
+  height: 100vh;
+}
+.cart .item .foods_list {
+  padding: 10rpx;
+  display: flex;
+}
+.cart .item .foods_list image {
+  flex: 3;
+}
+.cart .item .foods_list .foods_msg {
+  flex: 7;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart .item .foods_list .foods_msg .foods_name {
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.cart .item .foods_list .foods_msg .foods_active {
+  font-size: 20rpx;
+  color: #666;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.cart .item .foods_list .foods_msg .foods_price_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.cart .item .foods_list .foods_msg .foods_price_wrap .foods_price {
+  color: var(--themeColor);
+  font-size: 25rpx;
+}
+.cart .item .foods_list .foods_msg .foods_price_wrap .num_tool {
+  display: flex;
+}
+.cart .item .foods_list .foods_msg .foods_price_wrap .num_tool .num_edit {
+  width: 35rpx;
+  height: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+}
+.cart .item .foods_list .foods_msg .foods_price_wrap .num_tool .foods_num {
+  width: 40rpx;
+  height: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

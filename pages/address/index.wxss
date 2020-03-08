@@ -1,0 +1,98 @@
+/* pages/address/index.wxss */
+.address_wrap {
+  margin-top: 30rpx;
+  border-top: 1rpx solid #c3c3c3;
+  border-bottom: 1rpx solid #c3c3c3;
+}
+.address_wrap .name_wrap {
+  height: 180rpx;
+  display: flex;
+}
+.address_wrap .name_wrap .left {
+  font-size: 32.5rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+  flex: 3;
+}
+.address_wrap .name_wrap .right {
+  flex: 7;
+}
+.address_wrap .name_wrap .right .name {
+  display: flex;
+  align-items: center;
+  height: 85rpx;
+  font-size: 32.5rpx;
+}
+.address_wrap .name_wrap .right .sex {
+  display: flex;
+  align-items: center;
+  height: 85rpx;
+  border-top: 1rpx solid #c3c3c3;
+}
+.address_wrap .name_wrap .right .sex radio-group {
+  display: flex;
+}
+.address_wrap .name_wrap .right .sex radio-group view {
+  font-size: 32.5rpx;
+  margin-right: 25rpx;
+  width: 110rpx;
+  height: 60rpx;
+  border: 1rpx solid #c3c3c3;
+  color: #c3c3c3;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.address_wrap .name_wrap .right .sex radio-group view radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.address_wrap .name_wrap .right .sex radio-group .active {
+  border: 1rpx solid var(--themeColor);
+  color: var(--themeColor);
+}
+.address_wrap .wrap {
+  display: flex;
+  margin-left: 25rpx;
+  border-top: 1rpx solid #c3c3c3;
+  height: 85rpx;
+}
+.address_wrap .wrap text {
+  font-size: 32.5rpx;
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+.address_wrap .wrap .input {
+  font-size: 32.5rpx;
+  flex: 7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address_wrap .wrap .input view text {
+  color: #c3c3c3;
+  font-size: 30rpx;
+  margin-right: 25rpx;
+  font-weight: 1000;
+}
+.perserve {
+  border-radius: 20rpx;
+  margin-top: 25rpx;
+  margin-left: 2.5%;
+  width: 95%;
+  height: 80rpx;
+  background-color: var(--themeColor);
+  font-size: 32.5rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

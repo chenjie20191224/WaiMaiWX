@@ -1,0 +1,96 @@
+/* pages/business/index.wxss */
+.index_swiper swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.index_swiper swiper image {
+  width: 100%;
+  height: 100%;
+}
+.business_wrrap .title {
+  height: 70rpx;
+  background-color: #eee;
+  border-bottom: 1rpx solid #c3c3c3;
+  border-top: 1rpx solid #c3c3c3;
+  display: flex;
+  align-items: center;
+  color: #968f8f;
+  font-size: 26rpx;
+  padding-left: 30rpx;
+}
+.business_wrrap .active {
+  height: 120rpx;
+  display: flex;
+  padding: 30rpx;
+  align-items: center;
+  font-size: 26rpx;
+}
+.business_wrrap .active text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.business_wrrap .active image {
+  margin-right: 10rpx;
+  width: 60rpx;
+}
+.business_wrrap .business_msg {
+  border-bottom: 1rpx solid #c3c3c3;
+  margin-bottom: 30rpx;
+}
+.business_wrrap .business_msg .item {
+  height: 85rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #c3c3c3;
+  margin-left: 30rpx;
+}
+.business_wrrap .business_msg .item .title2 {
+  color: #968f8f;
+  flex: 2;
+  font-size: 30rpx;
+}
+.business_wrrap .business_msg .item .content {
+  font-size: 29rpx;
+  flex: 8;
+}
+.business_wrrap .business_msg .item .content view {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20rpx;
+}
+.business_wrrap .business_msg .item .content view .right {
+  color: #968f8f;
+  margin-right: 18rpx;
+}
+.business_wrrap .business_msg .itemEnd {
+  height: 85rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.business_wrrap .business_msg .itemEnd .title2 {
+  color: #968f8f;
+  flex: 2;
+  font-size: 30rpx;
+}
+.business_wrrap .business_msg .itemEnd .content {
+  font-size: 29rpx;
+  flex: 8;
+}
+.business_wrrap .business_msg .itemEnd .content view {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20rpx;
+}
+.business_wrrap .business_msg .itemEnd .content view .right {
+  color: #968f8f;
+  margin-right: 18rpx;
+}
+.business_wrrap .business_msg .itemEnd .hidden {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

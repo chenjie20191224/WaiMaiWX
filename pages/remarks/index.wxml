@@ -1,0 +1,21 @@
+<!--pages/remarks/index.wxml-->
+
+
+
+<view class="remarks_wrap">
+
+   <textarea bindinput="fontNum" value="{{value}}" placeholder="{{placeholder}}" placeholder-class="placeholder" maxlength="{{maxlength}}" focus="{{focus}}" auto-height="{{auto-height}}" show-confirm-bar="{{show-confirm-bar}}">
+   </textarea>
+   <view class="num">
+    {{num}}/50
+   </view>
+  <view class="mark_wrap">
+    <view class="mark" bindtap = "addString" data-text="少点辣">少点辣</view>
+    <view class="mark" bindtap = "addString" data-text="多点辣">多点辣</view>
+  </view>
+
+</view>
+<view class="but" bindtap = "ok">
+  完成
+</view>
+

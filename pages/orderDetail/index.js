@@ -1,0 +1,98 @@
+// pages/orderDetail/index.js
+import { request } from "../../request/index.js";
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    orderList:[],
+    business:{},
+    orderDetail:[],
+    index:0
+  },
+// 联系商家
+call(){
+  wx.makePhoneCall({
+    phoneNumber: this.data.business.telephone,
+    success: (result) => {
+      
+    },
+    fail: () => {},
+    complete: () => {}
+  });
+    
+
+},
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(options.index)
+    const {business}=wx.getStorageSync("business");
+    const orderList= wx.getStorageSync("orderList");
+    request({url:"/orderDetail",data:{
+      orderId:orderList[options.index].orderId
+    }})
+    .then(result=>{
+      console.log(result)
+      this.setData({
+        orderDetail:result
+      })
+    })
+      this.setData({
+        orderList,business,index:options.index
+      })
+
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+   
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

@@ -1,0 +1,69 @@
+.cart{
+    height: 100vh;
+    .item{
+     
+        .foods_list{
+            padding: 10rpx;
+            display: flex;
+           image{
+               flex: 3;
+               // width: 30%;
+               // height: 150rpx;
+           }
+           
+            .foods_msg{
+                flex: 7;
+                padding: 10rpx;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+               .foods_name{
+                   font-size: 30rpx;
+                   display: -webkit-box;
+                   overflow: hidden;
+                   -webkit-box-orient: vertical;
+                   -webkit-line-clamp: 1;
+               }
+               .foods_active{
+                   font-size: 20rpx;
+                   color: #666;
+                   display: -webkit-box;
+                   overflow: hidden;
+                   -webkit-box-orient: vertical;
+                   -webkit-line-clamp: 1;
+               }
+               .foods_price_wrap{
+                   display: flex;
+                   justify-content: space-between;
+                   .foods_price{
+                       color: var(--themeColor);
+                       font-size: 25rpx;
+                   }
+                   .num_tool{
+                       display: flex;
+                       .num_edit{
+                           width: 35rpx;
+                           height: 35rpx;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           background-color: var(--themeColor);
+                       }
+                       .foods_num{
+                           width: 40rpx;
+                           height: 35rpx;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                       }
+    
+                   }
+               }
+              
+           }
+        }
+    }
+
+   
+}
+

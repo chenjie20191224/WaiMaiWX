@@ -1,0 +1,28 @@
+<!--pages/oderList/index.wxml-->
+<view wx:if="{{!orderList[0]}}" class="none">
+  您还没有订单，快去下单吧！
+</view>
+<view class="order_wrap" 
+wx:for="{{orderList}}"
+wx:key="orderId"
+>
+  <view class="title">
+    <view class="left">外卖单号:{{item.orderId}}</view>
+    <view class="right {{item.orderState==='已配送'?'right2':''}}">{{item.orderState}}</view>
+  </view>
+  <view class="content" bindtap = "orderDetail" data-index="{{index}}">
+   <view class="content2">
+      <view class="left">
+      <view class="name">  {{businessName}}</view>
+      <view class="detail"> <text >[外卖配送]</text>共{{item.foodNum}}件商品  ￥{{item.actualPay}}</view>
+    </view>
+    <view class="right">
+      查看<text class="iconfont icon-xiangyou"></text>
+    </view>
+   </view>
+    <view class="date">
+     {{item.orderTime}}
+     </view>
+  </view>
+  
+</view>

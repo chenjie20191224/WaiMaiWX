@@ -1,0 +1,22 @@
+<!--components/Top.wxml-->
+<view class="top">
+
+  <view class="delivery_msg">
+     <view class="left">
+        <view class="icon"><image mode="widthFix" src="../icon/user.png"/></view>
+        <view class="msg">
+           <view class="row">起送￥<text >{{business.startDelivery}}</text ><text class="f">|</text>配送￥<text >{{business.deliveryFee}}</text ></view>
+           <view class="row">配送时间：<text >{{business.deliveryTime}}</text></view>
+        </view>
+     </view>
+     <view class="right"> 
+     <view class="button">
+     <view >分享店铺</view>
+    
+     <button class="share" open-type="share" plain="{{true}}"></button>
+     </view>
+     
+     </view>
+  </view>
+</view>
+  

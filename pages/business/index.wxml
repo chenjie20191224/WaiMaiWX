@@ -1,0 +1,54 @@
+<!--pages/business/index.wxml-->
+<!-- 轮播图 -->
+<view class="index_swiper">
+
+    <swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" interval="3000">
+    <swiper-item 
+    wx:for="{{swiper}}" 
+    wx:key="*this"
+    bindtap = "handlePrevewImage"
+    data-url="{{item}}"
+    >
+       <image class="" src="{{item}}" mode="scaleToFill">
+       </image>
+    </swiper-item>
+    </swiper>
+</view> 
+<view class="business_wrrap">
+  <view class="title">
+  商家活动
+  </view>
+  <view class="active"><image src="../../icon/gao.png" mode="widthFix" />
+  <text >阿三大苏打大大大苏打啊大苏打盛大的啊十大大苏打啊实打实的{{business.activity}}</text>
+  </view>
+  <view class="title">
+  商家信息
+  </view>
+  <view class="business_msg">
+      <view class="item">
+        <view class="title2">商家电话</view>
+        <view class="content">{{business.telephone}}</view>
+      </view>
+       <view class="item">
+        <view class="title2">商家地址</view>
+        <view class="content hidden"><text >{{business.address}}</text></view>
+      </view>
+       <view class="item">
+        <view class="title2">配送范围</view>
+        <view class="content">{{business.deliveryScope}}</view>
+      </view>
+       <view class="item">
+        <view class="title2">配送时间</view>
+        <view class="content">{{business.deliveryTime}}</view>
+      </view>
+       <view class="item">
+        <view class="title2">配送服务</view>
+        <view class="content">{{business.deliveryService}}</view>
+      </view>
+       <view class="itemEnd" bindtap = "PrevewImage">
+        <view class="title2">营业资质</view>
+        <view class="content"><view ><text class="right">查看</text><text class="iconfont icon-xiangyou1"></text></view></view>
+      </view>
+    </view>
+</view>
+

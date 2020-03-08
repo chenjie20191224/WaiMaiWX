@@ -1,0 +1,167 @@
+/* pages/user/index.wxss */
+page {
+  height: 100%;
+}
+.shopping_box {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  background-color: #eee;
+}
+.shopping_box .cart_wrap {
+  padding: 5rpx;
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+.shopping_box .cart_wrap image {
+  width: 80%;
+}
+.shopping_box .cart_wrap .num_wrap {
+  position: absolute;
+  top: 0;
+  left: 75rpx;
+  width: 30%;
+}
+.shopping_box .cart_wrap .num {
+  position: absolute;
+  top: -5rpx;
+  left: 75rpx;
+  width: 35rpx;
+  text-align: center;
+}
+.shopping_box .cart_wrap .num text {
+  color: white;
+  font-size: 20rpx;
+}
+.shopping_box .sum_wrap {
+  display: flex;
+  align-items: center;
+  flex: 4;
+  text-align: left;
+}
+.shopping_box .sum_wrap text {
+  text-align: right;
+  color: red;
+  font-size: 30rpx;
+}
+.shopping_box .pay_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+  flex: 1.5;
+}
+.shopping_box .pay_wrap text {
+  color: white;
+}
+.shopping_box .off {
+  background-color: #c3c3c3;
+}
+.Menu {
+  display: flex;
+  margin-top: 5rpx;
+}
+.Menu .foods {
+  flex: 8;
+}
+.Menu .foods .foods_container {
+  height: calc(100vh - 258rpx);
+}
+.Menu .foods .foods_container .foods_group .categoryName {
+  margin-left: 20rpx;
+  padding-left: 10rpx;
+  border-left: 5rpx solid var(--themeColor);
+}
+.Menu .foods .foods_container .foods_group .foods_list {
+  padding: 10rpx;
+  display: flex;
+}
+.Menu .foods .foods_container .foods_group .foods_list image {
+  flex: 3;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg {
+  flex: 7;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_name {
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_active {
+  font-size: 20rpx;
+  color: #666;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_price_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_price_wrap .foods_price {
+  color: var(--themeColor);
+  font-size: 25rpx;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_price_wrap .num_tool {
+  display: flex;
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_price_wrap .num_tool .num_edit {
+  width: 35rpx;
+  height: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+}
+.Menu .foods .foods_container .foods_group .foods_list .foods_msg .foods_price_wrap .num_tool .foods_num {
+  width: 40rpx;
+  height: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Menu .categorys {
+  flex: 2;
+}
+.Menu .categorys .categorys_container {
+  height: calc(100vh - 258rpx);
+}
+.Menu .categorys .categorys_container .category {
+  background-color: #f5efef;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.Menu .categorys .categorys_container .active {
+  background-color: white;
+  color: var(--themeColor);
+  font-weight: 600;
+}
+.business_active {
+  height: 22px;
+  margin-top: 0;
+  background-color: #ccc;
+}
+.business_active .example {
+  display: block;
+  width: 100%;
+}
+.business_active .example .marquee_box {
+  width: 100%;
+  position: relative;
+}
+.business_active .example .marquee_box .marquee_text {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+}

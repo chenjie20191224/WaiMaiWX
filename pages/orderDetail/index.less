@@ -1,0 +1,159 @@
+/* pages/orderDetail/index.wxss */
+.orderDetail_wrap{
+    background-color: #eee;
+    padding: 20rpx;
+    .content1{
+        border-top: 5rpx solid var(--themeColor);
+        background-color: white;
+        .title{
+            border-bottom: 1rpx solid #c3c3c3;
+            height: 150rpx;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .left{
+                font-size: 35rpx;
+                padding-left: 40rpx;
+                text{
+                    font-size: 26rpx;
+                    color: var(--themeColor);
+                }
+            }
+            .right{
+                font-size: 30rpx;
+                padding-right: 30rpx;
+                color: yellowgreen;
+            }
+        }        
+        .address_wrap{
+            border-bottom: 1rpx solid #c3c3c3;
+            height: 200rpx;
+            padding-left: 40rpx;
+            padding-top: 30rpx;
+            .title3{
+                color: #666;
+                height: 60rpx;
+                font-size: 25rpx;
+
+            }
+            .addres{
+                font-size: 29rpx;
+                .row{
+                    height: 60rpx;
+                }
+            }
+
+        }
+        .outTime{
+            height: 135rpx;
+            padding-left: 40rpx;
+            padding-top: 30rpx;
+            .title3{
+                color: #666;
+                height: 60rpx;
+                font-size: 25rpx;
+            }
+            .row{
+                height: 60rpx;
+            }
+        }
+    }
+    .content2{
+        margin-top: 30rpx;
+        background-color: white;
+        .title2{
+            height: 70rpx;
+            padding-left: 40rpx;
+            display: flex;
+            align-items: center;
+            border-bottom: 1rpx solid #c3c3c3;
+        }
+        .foods{
+            padding-top: 20rpx;
+            padding-bottom: 20rpx;
+            padding-left: 20rpx;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 30rpx;
+            border-bottom: 1rpx solid #eee;
+            .left{
+                display: flex;
+                align-items: center;
+                image{
+                    width: 100rpx;
+                }
+                text{
+                    padding-left: 40rpx;
+                 
+                }
+            }
+            .right{
+                text-align: center;
+               
+                text{
+                    padding-right: 50rpx;
+                }
+              
+            }
+        }
+        .detail{
+            border-bottom: 1rpx solid #c3c3c3;
+            .row1{
+                display: flex;
+                justify-content: flex-end;
+                margin-bottom: 20rpx;
+                font-size: 24rpx;
+                padding: 10rpx;
+                padding-right: 30rpx;
+                .weight{
+                    font-weight: 600;
+                }
+            }
+            .row2{
+                color: #666;
+                display: flex;
+                justify-content: space-between;
+                font-size: 24rpx;
+               
+                padding-right: 30rpx;
+                padding-bottom: 20rpx;
+                padding-left: 40rpx;
+            }
+        }
+        .sum{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 35rpx;
+            font-weight: 600;
+            padding: 20rpx;
+            padding-right: 30rpx;
+        }
+    }
+    .content3{
+        margin-top: 30rpx;
+        font-size: 28rpx;
+        color: #666;
+        background-color: white;
+        .itme{
+            border-bottom: 1rpx solid #eee;
+            display: flex;
+            justify-content: space-between;
+            padding: 40rpx;
+            .left{
+                flex: 2.5;
+            }
+            .right{
+
+                color: black;
+                flex: 7.5;
+                .hidden{
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+            }
+        }
+    }
+}
