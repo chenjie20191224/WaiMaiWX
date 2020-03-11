@@ -6,7 +6,6 @@ import { request } from "../../request/index.js";
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
 var qqmapsdk;
 Page({
-
   /**
    * 页面的初始数据
    */
