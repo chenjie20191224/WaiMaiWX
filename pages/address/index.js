@@ -35,11 +35,13 @@ Page({
     
     this.data.userAddress.telephone=e.detail.value;
   },
+  
   // 输入门牌号
   inputHuoseNumber(e){
 
     this.data.userAddress.houseNumber=e.detail.value;
   },
+
   // 保存地址
   perserveAddress(){
     let {userAddress}=this.data;
