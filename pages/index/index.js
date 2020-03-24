@@ -148,7 +148,7 @@ this.setData({
     // 结算
     pay(){
     
-      if(this.data.sum>this.data.business.startDelivery){
+      if(this.data.sum>=this.data.business.startDelivery){
         wx.setStorageSync("foodNum", this.data.foodNum);
         wx.navigateTo({
           url: '/pages/oder/index'
@@ -188,9 +188,7 @@ editNum(e){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getBusiness();
     this.getMenu();
-
   },
 
   /**
@@ -204,6 +202,7 @@ editNum(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getBusiness();
     // 当在购物车或订单页面改变菜品数量返回首页时重新计算购物车数量,总价,菜品对应数量
     const foodNum=wx.getStorageSync("foodNum");
     let sum=0;

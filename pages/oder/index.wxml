@@ -85,7 +85,7 @@
   <view class="right">
     应计<text>￥{{sum+packFee+business.deliveryFee}}</text>
   </view>
-  <view wx:if="{{sum>business.startDelivery}}" class="left" bindtap = "pay">
+  <view wx:if="{{sum>=business.startDelivery}}" class="left" bindtap = "pay">
     支付
   </view>
   <view wx:else class="left off">

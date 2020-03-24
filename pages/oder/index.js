@@ -109,6 +109,7 @@ Page({
                duration: 1500,
                mask: false
              });
+
              request({url:"/createOrder",
             data:{
                 openid:this.data.openid,
@@ -126,7 +127,7 @@ Page({
                 packFee:this.data.packFee,
                 deliveryFee:this.data.business.deliveryFee,
                 actualPay:this.data.sum+this.data.packFee+this.data.business.deliveryFee
-
+              
             }
             })
             .then(result=>{
@@ -142,25 +143,35 @@ Page({
                   foodIcon:v.icon
                 }
               }).then(result=>{
+              
 
-             //  清除菜品对应的数量foodNum
-             let num=[];
-            this.data.foodNum.forEach((v,i)=>{
-            num.push(0);
-             }) 
-             wx.setStorageSync("foodNum", num);
+              })
+              })
+              //  清除菜品对应的数量foodNum
+              let num = [];
+              this.data.foodNum.forEach((v, i) => {
+                num.push(0);
+              })
+              wx.setStorageSync("foodNum", num);
 
               wx.switchTab({
                 url: '/pages/oderList/index'
               })
-              })
-              })
+              request({
+                    url:"/Printer",
+                    data:{
+                      orderId
+                    }
+                  })
             
             })    
            }
          },
          fail: () => {},
-         complete: () => {}
+         complete: () => {
+         
+         
+         }
        });
          
      }

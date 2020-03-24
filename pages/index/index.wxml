@@ -26,7 +26,10 @@
    <view class="sum_wrap">
     <text >￥{{sum}}</text>
    </view>
-   <view class="pay_wrap {{sum<business.startDelivery?'off':''}}" bindtap = "pay">
+   <view class="pay_wrap off" wx:if="{{!business.businessStatus}}">
+     <text>暂停营业</text>
+   </view>
+   <view wx:else class="pay_wrap {{sum<business.startDelivery?'off':''}}" bindtap = "pay">
      <text>{{sum<business.startDelivery?business.startDelivery+"元起送":"选好了"}}</text>
    </view>
 </view>
@@ -65,7 +68,7 @@
            <view class="foods_price">
          ￥{{item2.price}}/份 
          </view>
-         <view class="num_tool">
+         <view class="num_tool" wx:if="{{business.businessStatus}}">
            <view class="num_edit" bindtap = "editNum" data-index="{{index2}}" data-edit="-1">-</view>
            <view class="foods_num">{{foodNum[index2]}}</view>
            <view class="num_edit" bindtap = "editNum" data-index="{{index2}}" data-edit="1">+</view>
