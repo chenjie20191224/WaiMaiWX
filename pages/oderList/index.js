@@ -7,7 +7,9 @@ Page({
    */
   data: {
     orderList:[],
-    businessName:""
+    businessName:"",
+    totalPage : 1,
+    queryPage : 1
   },
   // 跳转的订单详情
   orderDetail(e){
@@ -18,6 +20,20 @@ Page({
       
 
   },
+
+  //请求订单列表
+  orderList(){
+    const openid=wx.getStorageSync("openid");
+    request({url:"/orderListPage",data:{openid,pageNum:this.data.queryPage,pageSize:10}})
+   .then(result=>{
+     wx.setStorageSync("orderList", result.orderFoods);
+     this.setData({
+      orderList:[...this.data.orderList,...result.orderFoods],
+      totalPage:Math.ceil(result.totalPage/10)
+     })
+   })
+      
+  } ,
 
   /**
    * 生命周期函数--监听页面加载
@@ -41,16 +57,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const openid=wx.getStorageSync("openid");
-   request({url:"/orderList",data:{openid}})
-   .then(result=>{
-     wx.setStorageSync("orderList", result);
-       
-     this.setData({
-      orderList:result
-     })
-   })
-      
+    this.data.orderList=[];
+    this.data.queryPage=1;
+    this.orderList();
   
   },
 
@@ -79,6 +88,20 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    if(this.data.queryPage<=this.data.totalPage){
+      this.orderList();
+      this.data.queryPage++;
+    }else{
+      wx.showToast({
+        title: '没有下一页数据了',
+        icon: 'none',
+        image: '',
+        duration: 1500,
+        mask: false
+      });
+        
+    }
+   
 
   },
 
