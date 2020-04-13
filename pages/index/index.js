@@ -15,10 +15,10 @@ Page({
    currentIndex:0,
    top:0,
    business:{},
-   text: '这是一条会滚动的文字滚来滚去的阿斯顿撒大苏打大文字跑马灯，哈哈哈哈哈哈哈哈',
+   text: '',
    marqueePace: 1,//滚动速度
    marqueeDistance2: 0,//初始滚动距离
-   marquee2copy_status: false,
+  
    marquee2_margin: 200,
    size: 14,
    orientation: 'left',//滚动方向
@@ -38,6 +38,7 @@ console.log(business);
 this.setData({
   business
 })
+return business;
 })
     
   },
@@ -80,46 +81,30 @@ this.setData({
      
       var interval = setInterval(function () {
      
-       if (-vm.data.marqueeDistance2 < vm.data.length) {
-     
-       // 如果文字滚动到出现marquee2_margin=30px的白边，就接着显示
+       
      
        vm.setData({
      
         marqueeDistance2: vm.data.marqueeDistance2 - vm.data.marqueePace,
      
-        marquee2copy_status: vm.data.length + vm.data.marqueeDistance2 <= vm.data.windowWidth + vm.data.marquee2_margin,
      
        });
+       if (-vm.data.marqueeDistance2 === vm.data.length) {
      
-       } else {
-     
-       if (-vm.data.marqueeDistance2 >= vm.data.marquee2_margin) { // 当第二条文字滚动到最左边时
-     
+        // 如果文字滚动到出现marquee2_margin=30px的白边，就接着显示
         vm.setData({
      
-        marqueeDistance2: vm.data.marquee2_margin // 直接重新滚动
-     
-        });
-     
-        clearInterval(interval);
-     
-        vm.run2();
+          marqueeDistance2: vm.data.windowWidth
+       
+       
+         });
+         clearInterval(interval);
+         vm.run2();
+        console.log("重来")
      
        } else {
-     
-        clearInterval(interval);
-     
-        vm.setData({
-     
-        marqueeDistance2: -vm.data.windowWidth
-     
-        });
-     
-        vm.run2();
-     
-       }
-     
+    //  console.log("重来")
+      
        }
      
       }, vm.data.interval);
@@ -188,7 +173,30 @@ editNum(e){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+     //  清除菜品对应的数量foodNum
+     
+     wx.setStorageSync("foodNum", this.data.foodNum);
     this.getMenu();
+    this.getBusiness();
+    // 页面显示
+    var vm = this;
+    var {business}=wx.getStorageSync("business");
+    var text=business.activity;
+    var length = (text.length-6) * vm.data.size;//文字长度
+    var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
+
+    vm.setData({
+      text,
+      marqueeDistance2 : windowWidth,
+
+      length: length,
+
+      windowWidth: windowWidth,
+
+      //当文字长度小于屏幕长度时，需要增加补白
+
+    });
+    vm.run2();// 第一个字消失后立即从右边出现
   },
 
   /**
@@ -202,7 +210,6 @@ editNum(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getBusiness();
     // 当在购物车或订单页面改变菜品数量返回首页时重新计算购物车数量,总价,菜品对应数量
     const foodNum=wx.getStorageSync("foodNum");
     let sum=0;
@@ -214,31 +221,14 @@ editNum(e){
     // })
     foodNum.forEach((v,i)=>{
       cartNum+=v;
-      sum+=foods[i].price*v;
+       sum+=foods[i].price*v;
     })
       this.setData({
         foodNum,sum,cartNum
       })
 
 
-    // 页面显示
    
-    var vm = this;
-   
-    var length = vm.data.text.length * vm.data.size+30;//文字长度
-   
-    var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
-   
-    vm.setData({
-   
-     length: length,
-   
-     windowWidth: windowWidth,
-   
-     marquee2_margin: length < windowWidth ? windowWidth - length : vm.data.marquee2_margin//当文字长度小于屏幕长度时，需要增加补白
-   
-    });
-    // vm.run2();// 第一个字消失后立即从右边出现
    
     },
 

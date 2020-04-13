@@ -5,8 +5,8 @@
     <view class="example">
       <view class="marquee_box">
       <view class="marquee_text" style="{{orientation}}:{{marqueeDistance2}}px;font-size: {{size}}px;">
-       <text ><text class="iconfont icon-xiaolaba">：</text>{{text}}</text>
-       <text wx:if="{{marquee2copy_status}}" style="margin-left:{{marquee2_margin}}px;"><text class="iconfont icon-xiaolaba">：</text>{{text}}</text>
+       <text >通知：{{text}}</text>
+      
        </view>
        </view>
       </view>

@@ -25,7 +25,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.10.1",
 	"appid": "wx4738a29d658b52de",
-	"projectname": "%E7%B1%B3%E7%B2%92%E7%82%B9%E9%A4%90",
+	"projectname": "WaiMaiWX",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

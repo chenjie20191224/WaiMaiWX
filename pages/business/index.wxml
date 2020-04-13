@@ -19,7 +19,7 @@
   商家活动
   </view>
   <view class="active"><image src="../../icon/gao.png" mode="widthFix" />
-  <text >阿三大苏打大大大苏打啊大苏打盛大的啊十大大苏打啊实打实的{{business.activity}}</text>
+  <text >{{business.activity}}</text>
   </view>
   <view class="title">
   商家信息
