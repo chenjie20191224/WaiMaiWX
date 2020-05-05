@@ -2,7 +2,7 @@
 <view class="orderDetail_wrap">
   <view class="content1">
     <view class="title">
-     <view class="left"> {{business.businessName}}<text>[{{orderList[index].orderState}}]</text></view>
+     <view class="left"> {{business.businessName}}<text class="{{orderList[index].orderState==='待配送'?'':'state'}}">[{{orderList[index].orderState}}]</text></view>
      <view class="right" bindtap = "call">联系商家</view>
    </view>
     <view class="address_wrap">

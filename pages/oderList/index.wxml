@@ -8,7 +8,7 @@ wx:key="orderId"
 >
   <view class="title">
     <view class="left">外卖单号:{{item.orderId}}</view>
-    <view class="right {{item.orderState==='已配送'?'right2':''}}">{{item.orderState}}</view>
+    <view class="right {{item.orderState==='待配送'?'':'right2'}}">{{item.orderState}}</view>
   </view>
   <view class="content" bindtap = "orderDetail" data-index="{{index}}">
    <view class="content2">

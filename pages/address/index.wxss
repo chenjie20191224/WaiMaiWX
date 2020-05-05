@@ -77,6 +77,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.address_wrap .wrap .input .input_addre {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
 .address_wrap .wrap .input view text {
   color: #c3c3c3;
   font-size: 30rpx;

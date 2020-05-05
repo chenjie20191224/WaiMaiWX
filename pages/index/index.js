@@ -55,7 +55,7 @@ return business;
     foods.forEach((v,i) => {
       foodNum[i]=0;
     });
-   
+    wx.setStorageSync("foodNum", foodNum);
       
     this.setData({
       categorys:categoryFoods,
@@ -182,7 +182,7 @@ editNum(e){
     var vm = this;
     var {business}=wx.getStorageSync("business");
     var text=business.activity;
-    var length = (text.length-6) * vm.data.size;//文字长度
+    var length = (text.length) * vm.data.size;//文字长度
     var windowWidth = wx.getSystemInfoSync().windowWidth;// 屏幕宽度
 
     vm.setData({

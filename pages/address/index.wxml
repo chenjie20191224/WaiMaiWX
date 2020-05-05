@@ -21,9 +21,9 @@
      </view>
   </view>
   <view class="wrap">
-     <text >收获地址</text>
+     <text >收货地址</text>
       <view class="input" bindtap = "getAdress"> 
-      <view >{{userAddress.address}}</view><view ><text>></text></view>
+      <view class="input_addre">{{userAddress.address}}</view><view ><text>></text></view>
      </view>
   </view>
   <view class="wrap">

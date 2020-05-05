@@ -22,6 +22,9 @@
   font-size: 26rpx;
   color: var(--themeColor);
 }
+.orderDetail_wrap .content1 .title .left .state {
+  color: green;
+}
 .orderDetail_wrap .content1 .title .right {
   font-size: 30rpx;
   padding-right: 30rpx;
