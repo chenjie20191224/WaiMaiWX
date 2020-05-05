@@ -59,14 +59,27 @@ Page({
   deleteAddress(e){
     const {index}=e.currentTarget.dataset;
     const {addressList}=this.data;
-    request({url:"/deleteAddress",data:{id:addressList[index].id}})
-    .then(request=>{
-      console.log("删除"+request)
+    const that=this;
+    wx.showModal({
+    title: '确定删除此地址吗',
+   
+    success(res) {
+      if (res.confirm) {
+        　　　　　　　　　　　　request({url:"/deleteAddress",data:{id:addressList[index].id}})
+        .then(request=>{
+          console.log("删除"+request)
+        })
+        addressList.splice(index,1)
+        that.setData({
+         addressList
+        })
+
+      } else if (res.cancel) {
+        console.log('用户点击取消')
+      }
+    }
     })
-    addressList.splice(index,1)
-    this.setData({
-     addressList
-    })
+    
   },
 
   /**

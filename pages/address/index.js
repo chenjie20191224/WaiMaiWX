@@ -80,6 +80,13 @@ Page({
         icon:"none",
         duration:2000
       })
+    }else if(!(/(^[0-9]*$)/.test(userAddress.telephone))||userAddress.telephone.length!=11){
+      wx.showToast({
+        title:'请输入正确的电话号码！',
+        icon:"none",
+        duration:2000
+      })
+    
     }else{
       // JSON.stringify(userAddress)
       // 从增加按钮跳转过来的
