@@ -15,7 +15,7 @@ Page({
     .then(result=>{
     console.log(result);
    const {business}=result;
-   const swiper=["http://localhost:8080/"+business.chart1,"http://localhost:8080/"+business.chart2,"http://localhost:8080/"+business.chart3];
+   const swiper=[business.chart1,business.chart2,business.chart3];
     this.setData({
       swiper,
       business

@@ -27,6 +27,9 @@ Page({
     request({url:"/orderListPage",data:{openid,pageNum:this.data.queryPage,pageSize:10}})
    .then(result=>{
      wx.setStorageSync("orderList", result.orderFoods);
+     console.log(this.data.orderList)
+     console.log(result.orderFoods)
+     console.log(Math.ceil(result.totalPage/10))
      this.setData({
       orderList:[...this.data.orderList,...result.orderFoods],
       totalPage:Math.ceil(result.totalPage/10)
@@ -60,7 +63,6 @@ Page({
     this.data.orderList=[];
     this.data.queryPage=1;
     this.orderList();
-  
   },
 
   /**
@@ -88,7 +90,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.queryPage<=this.data.totalPage){
+    if(this.data.queryPage<this.data.totalPage){
       this.orderList();
       this.data.queryPage++;
     }else{
