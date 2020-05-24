@@ -26,7 +26,7 @@ Page({
     const openid=wx.getStorageSync("openid");
     request({url:"/orderListPage",data:{openid,pageNum:this.data.queryPage,pageSize:10}})
    .then(result=>{
-     wx.setStorageSync("orderList", result.orderFoods);
+     
      console.log(this.data.orderList)
      console.log(result.orderFoods)
      console.log(Math.ceil(result.totalPage/10))
@@ -34,6 +34,7 @@ Page({
       orderList:[...this.data.orderList,...result.orderFoods],
       totalPage:Math.ceil(result.totalPage/10)
      })
+     wx.setStorageSync("orderList", this.data.orderList);
    })
       
   } ,
@@ -46,6 +47,9 @@ Page({
       this.setData({
         businessName
       })
+    this.data.orderList = [];
+    this.data.queryPage = 1;
+    this.orderList();
    
   },
 
@@ -60,9 +64,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.data.orderList=[];
-    this.data.queryPage=1;
-    this.orderList();
+    
   },
 
   /**

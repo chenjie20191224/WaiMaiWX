@@ -112,9 +112,9 @@ Page({
          openid
       }
   })
-  .then(request=>{
+  .then(ruest=>{
     this.setData({
-      addressList:request
+      addressList: ruest
    })
      
     // console.log(this.data.addressList)
