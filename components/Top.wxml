@@ -3,7 +3,7 @@
 
   <view class="delivery_msg">
      <view class="left">
-        <view class="icon"><image mode="widthFix" src="../icon/user.png"/></view>
+        <view class="icon"><image mode="widthFix" src="../icon/logo2.jpg"/></view>
         <view class="msg">
            <view class="row">起送￥<text >{{business.startDelivery}}</text ><text class="f">|</text>配送￥<text >{{business.deliveryFee}}</text ></view>
            <view class="row">配送时间：<text >{{business.deliveryTime}}</text></view>

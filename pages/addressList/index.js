@@ -48,8 +48,8 @@ Page({
   },
   // 编辑地址
   editAddress(e){
-    const {index}=e.currentTarget.dataset;
-    wx.setStorageSync("editAddress", this.data.addressList[index]);
+    const {index1}=e.currentTarget.dataset;
+    wx.setStorageSync("editAddress", this.data.addressList[index1]);
       
     wx.navigateTo({
       url: '../address/index?msg=edit'
@@ -57,7 +57,7 @@ Page({
   },
   // 删除地址
   deleteAddress(e){
-    const {index}=e.currentTarget.dataset;
+    const {index2}=e.currentTarget.dataset;
     const {addressList}=this.data;
     const that=this;
     wx.showModal({
@@ -65,11 +65,11 @@ Page({
    
     success(res) {
       if (res.confirm) {
-        　　　　　　　　　　　　request({url:"/deleteAddress",data:{id:addressList[index].id}})
+        　　　　　　　　　　　　request({url:"/deleteAddress",data:{id:addressList[index2].id}})
         .then(request=>{
           console.log("删除"+request)
         })
-        addressList.splice(index,1)
+        addressList.splice(index2,1)
         that.setData({
          addressList
         })

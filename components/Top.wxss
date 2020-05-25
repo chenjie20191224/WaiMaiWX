@@ -8,6 +8,7 @@
 .top .delivery_msg .left {
   display: flex;
   padding: 5px;
+  align-items: center;
 }
 .top .delivery_msg .left .icon {
   width: 100rpx;

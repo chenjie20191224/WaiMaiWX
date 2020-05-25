@@ -10,8 +10,8 @@
      <view>{{item.address}}[{{item.houseNumber}}]</view>
    </view>
    <view class="right">
-    <text class="iconfont icon-bianji" bindtap = "editAddress" data-index="{{index}}"></text>
-    <text class="iconfont icon-shanchu" bindtap = "deleteAddress" data-index="{{index}}"></text>
+    <text class="iconfont icon-bianji" bindtap = "editAddress" data-index1="{{index}}"></text>
+    <text class="iconfont icon-shanchu" bindtap = "deleteAddress" data-index2="{{index}}"></text>
    </view>
   </view>
 
