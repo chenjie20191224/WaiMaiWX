@@ -43,10 +43,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   const businessName= wx.getStorageSync("businessName");
-      this.setData({
-        businessName
-      })
+  
     this.data.orderList = [];
     this.data.queryPage = 1;
     this.orderList();
@@ -64,7 +61,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    const businessName = wx.getStorageSync("businessName");
+    this.setData({
+      businessName
+    })
   },
 
   /**

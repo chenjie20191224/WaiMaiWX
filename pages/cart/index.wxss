@@ -12,6 +12,7 @@
 .foods_wrap {
   border-radius: 15rpx;
   background-color: white;
+  margin-bottom: 90rpx;
 }
 .foods_wrap .title {
   height: 110rpx;
@@ -117,19 +118,6 @@
 .foods_wrap .foods .bottom view text {
   font-size: 25rpx;
 }
-.foods_wrap .sumMony {
-  height: 110rpx;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 40rpx;
-}
-.foods_wrap .sumMony text {
-  font-size: 26rpx;
-}
-.foods_wrap .sumMony text text {
-  font-size: 40rpx;
-}
 .tool {
   position: fixed;
   bottom: 0;
@@ -139,6 +127,19 @@
   background-color: #eee;
   display: flex;
   justify-content: flex-end;
+}
+.tool .sumMony {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 40rpx;
+}
+.tool .sumMony text {
+  font-size: 26rpx;
+}
+.tool .sumMony text text {
+  font-size: 40rpx;
 }
 .tool .right {
   width: 200rpx;

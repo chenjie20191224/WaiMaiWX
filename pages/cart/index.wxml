@@ -43,12 +43,13 @@
        
     </view>
     
-    <view class="sumMony">
-      <text>共计￥<text >{{sum}}</text></text>
-    </view>
+ 
   </view>
 
   <view class="tool" >
+     <view class="sumMony">
+      <text>共计￥<text >{{sum}}</text></text>
+    </view>
    <view wx:if="{{sum<business.startDelivery}}" class="right off">
    {{business.startDelivery}}起送
    </view>

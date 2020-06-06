@@ -44,7 +44,6 @@ wx.previewImage({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
    this.getBusiness();
   },
 
@@ -52,18 +51,18 @@ wx.previewImage({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    const businessName=wx.getStorageSync("businessName");
-    console.log(businessName)
-    wx.setNavigationBarTitle({
-      title: businessName
-    })
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const businessName = wx.getStorageSync("businessName");
+    console.log(businessName)
+    wx.setNavigationBarTitle({
+      title: businessName
+    })
   },
 
   /**

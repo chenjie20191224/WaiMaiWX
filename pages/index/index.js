@@ -223,6 +223,7 @@ editNum(e){
       cartNum+=v;
        sum+=foods[i].price*v;
     })
+    this.getBusiness();
       this.setData({
         foodNum,sum,cartNum
       })

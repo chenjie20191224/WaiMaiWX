@@ -7,7 +7,7 @@ Page({
    */
   data: {
     orderList:[],
-    business:{},
+    businessName:"",
     orderDetail:[],
     index:0
   },
@@ -29,7 +29,7 @@ call(){
    */
   onLoad: function (options) {
     console.log(options.index)
-    const {business}=wx.getStorageSync("business");
+    const businessName=wx.getStorageSync("businessName");
     const orderList= wx.getStorageSync("orderList");
     request({url:"/orderDetail",data:{
       orderId:orderList[options.index].orderId
@@ -41,7 +41,7 @@ call(){
       })
     })
       this.setData({
-        orderList,business,index:options.index
+        orderList, businessName,index:options.index
       })
 
 
