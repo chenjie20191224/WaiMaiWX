@@ -8,18 +8,16 @@ Page({
   data: {
     orderList:[],
     businessName:"",
+    business:{},
     orderDetail:[],
     index:0
   },
 // 联系商家
 call(){
+  console.log(this.data.business.telephone)
   wx.makePhoneCall({
     phoneNumber: this.data.business.telephone,
-    success: (result) => {
-      
-    },
-    fail: () => {},
-    complete: () => {}
+  
   });
     
 
@@ -30,6 +28,7 @@ call(){
   onLoad: function (options) {
     console.log(options.index)
     const businessName=wx.getStorageSync("businessName");
+    const {business} = wx.getStorageSync("business");
     const orderList= wx.getStorageSync("orderList");
     request({url:"/orderDetail",data:{
       orderId:orderList[options.index].orderId
@@ -41,7 +40,7 @@ call(){
       })
     })
       this.setData({
-        orderList, businessName,index:options.index
+        orderList, businessName, index: options.index, business
       })
 
 
